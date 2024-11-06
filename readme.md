@@ -32,6 +32,15 @@ Both urls should show a message from the shared package.
 Is only as an example, this structure works with React, Vue, Angular, React Native, etc. Just replace the Svelte apps with your preferred framework.
 Same for the API, you can use Express, Fastify, Koa, etc.
 
+## How this works
+Yarn workspaces allows us to manage multiple packages and apps in a single repository. Each app can have their own dependencies and scripts, and it allows us to import shared code between them. 
+
+The root `package.json` contains a `dev` script that runs all the `dev:` scripts in the `package.json` files of each app. This allows us to run all the apps locally with a single command.
+
+The root `package.json` also contains a `build` and a `start` script that are calling `./scripts/build.js` and `./scripts/start.js` respectively. These scripts are responsible for building and starting the app according to the `WORKSPACE` environment variable.
+
+*Feel free to experiment without the `./scrips` as middle-man, for example set the `build` command just as `yarn workspace $WORKSPACE build` or expand the `./scripts` to achieve more elaborated pipelines (maybe your apps/api is not a js app).*
+
 ## Structure
 Yarn workspaces allow the structure to be super simple, there is a root `packages.json` that glues things together and there is an `apps` folder that contains all the packages and apps we want to manage.
 
