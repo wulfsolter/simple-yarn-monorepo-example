@@ -12,9 +12,13 @@ This allows us to deploy our apps by simply pushing the entire monorepo to our C
 - a Svelte dashboard app which can be deployed to Vercel/Netlify/etc.
 - a Hello World TypeScript server app that can be deployed to Dokku/Heroku/Google Cloud/etc.
 
-# How to use
-For a quick start, clone this repo and run `yarn install` to install all dependencies.
-Then you can run `yarn dev` to start all apps locally.
+# Quick local run
+```
+git clone git@github.com:cristianszwarc/simple-yarn-monorepo-example.git
+cd simple-yarn-monorepo-example
+yarn install
+yarn dev
+```
 
 http://localhost:3001 will show a hello world message from the api app.
 
