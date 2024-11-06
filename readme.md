@@ -141,3 +141,8 @@ Example:
 ```
 nodemon --watch src --watch ../shared-package-1 --exec ts-node src/index.ts
 ```
+
+## Security considerations
+Make sure your CI/CD process is correctly configured to only publish/run the build folder of the app you want to deploy and not the entire monorepo.
+
+For example in Vercel/Netlify/etc. you need set the `publish` directory to `apps/dashboard/build`.
