@@ -1,0 +1,6 @@
+{
+  "name": "@my-amazing-monorepo/shared-package1",
+  "description": "a shared package to be used in the multiple apps of the monorepo",
+  "version": "1.0.0",
+  "license": "MIT"
+}

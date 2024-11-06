@@ -1,0 +1,26 @@
+{
+  "name": "simple-yarn-monorepo-example",
+  "version": "1.0.0",
+  "description": "A simple monorepo using Yarn workspaces.",
+  "author": "cristianszwarc <cristianszwarc@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "NODE_ENV=development npm-run-all -p dev:*",
+    "dev:api": "yarn workspace api run dev",
+    "dev:dashboard": "yarn workspace dashboard dev",
+    "build": "scripts/build.sh",
+    "start": "scripts/start.sh"
+  },
+  "nohoist": [
+    "**/rimraf",
+    "**/rimraf/**"
+  ],
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
